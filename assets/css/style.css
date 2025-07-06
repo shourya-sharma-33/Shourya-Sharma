@@ -969,6 +969,7 @@ a.btn-icon{
     order: 1;
     justify-content: flex-end;
   }
+  .service-card .img{visibility: hidden;}
 }
 
 @media (min-width:600px){
@@ -1021,6 +1022,35 @@ a.btn-icon{
     font-size: 1.9rem;
     margin-block-end: 30px;
   }
+
+
+  .service-card {
+  position: relative;
+}
+
+.service-card .img {
+  display: block;
+  position: absolute;
+  top: 0px; /* distance from top, adjust as needed */
+  left: 0px ;  
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-1), visibility var(--transition-1);
+  z-index: 2;
+  background: transparent;
+  pointer-events: none;
+}
+
+
+.service-card:hover .img,
+.service-card:focus-within .img {
+  opacity: 1;
+  visibility: visible;
+}
 
   .hero {padding-block-start: 150px; margin-top: -50px;}
   .hero .container {
@@ -1284,30 +1314,4 @@ a.btn-icon{
   .service-card{padding-block: 65px;}
   .portfolio .container { padding-inline-start: 45px;}
   .footer-top .container {max-width: 1200px ;}
-}
-.service-card {
-  position: relative;
-}
-
-.service-card .img {
-  display: block;
-  position: absolute;
-  top: 0px; /* distance from top, adjust as needed */
-  left: 0px ;  
-  transform: translateX(-50%);
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--transition-1), visibility var(--transition-1);
-  z-index: 2;
-  background: transparent;
-  pointer-events: none;
-}
-
-.service-card:hover .img,
-.service-card:focus-within .img {
-  opacity: 1;
-  visibility: visible;
 }
